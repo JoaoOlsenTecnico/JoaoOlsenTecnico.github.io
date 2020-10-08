@@ -116,6 +116,7 @@
     function openInsta(){
         document.getElementById("inicial").style.opacity = "0";
         setTimeout(function(){
+            document.getElementsByClassName("slick-track")[0].style.transform = "translate3d(-706px, 0px, 0px)";
             document.getElementById("inicial").style.display = "none";
             document.getElementById("maps").style.display = "none";
             document.getElementById("insta").style.display = "block";
@@ -235,6 +236,7 @@
                                 }
                             ]
                         });
+                        
                     }
     
                 });
