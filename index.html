@@ -11,8 +11,8 @@
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@9"></script>
     <script src="https://www.jqueryscript.net/demo/Instagram-Photos-Without-API-instagramFeed/jquery.instagramFeed.js"></script>
     <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBqPsgzq9zNT3zFuG0-hs3P_mDB1xaA41w&callback=initMap" type="text/javascript"></script>
-    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css" />
     <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+   
 </head>
 <style>
     @font-face {
@@ -117,7 +117,6 @@
     function openInsta(){
         document.getElementById("inicial").style.opacity = "0";
         setTimeout(function(){
-            document.getElementsByClassName("slick-track")[0].style.transform = "translate3d(-706px, 0px, 0px)";
             document.getElementById("inicial").style.display = "none";
             document.getElementById("maps").style.display = "none";
             document.getElementById("insta").style.display = "block";
@@ -173,7 +172,7 @@
             <h3>Tecnologia e inovação</h3>
         </div>
         <div class="nav-botoes">
-            <button class="botao" id="mapa" onclick="openMaps()">Mapa</button>
+            <button class="botao" id="mapa" onclick="openMaps()">Nasa</button>
             <button class="botao" id="fotos" onclick="openInsta()">Fotos</button>
         </div>
     </section>
@@ -195,54 +194,25 @@
                 <i class="fas fa-chevron-circle-left"></i> 
                 <span>Voltar</span> 
              </div>
-            <h1>Fotos</h1>
+            <h1>Nasa</h1>
         </div>
-        <div class="slider-instagram">
-            <div class="slides-slick">
-    
-            </div>
+        <div id="nasa">
+            
         </div>
-        <!-- <div id="instagram-feed-demo" class="instagram_feed"></div> -->
     </section>
 </body>
 <script>
-    (function($){
-            $(window).on('load', function(){
-                $.instagramFeed({
-                    'username': 'jaoolsen',
-                    'container': "#instagram-feed-demo" ,
-                    'get_raw_json': true,
-                    'callback': function (data) {
-                        console.log(JSON.parse(data));
-                        data = JSON.parse(data);
-                        for (var x = 0; x < data.images.length; x++) {
-                            var onclickdiv = 'https://www.instagram.com/p/' + data.images[x].node.shortcode + '/'
-                            var open = "window.open('" + onclickdiv + "')"
-                            var html = '<div class="col-lg-3 col-md-6 col-12" style="position:relative; padding:0px;" onclick="' + open +'"><img src="' + data.images[x].node.thumbnail_src + '"/></div>';
-                            document.getElementsByClassName("slides-slick")[0].insertAdjacentHTML("beforeend", html);
-                        }
-                        jQuery('.slides-slick').slick({
-                            slidesToShow: 4,
-                            slidesToScroll: 1,
-                            autoplay: false,
-                            variableWidth: true,
-                            responsive: [
-                                {
-                                    breakpoint: 1000,
-                                    settings: {
-                                        arrows: false,
-                                        centerMode: true,
-                                        slidesToShow: 1
-                                    }
-                                }
-                            ]
-                        });
-                        
-                    }
-    
-                });
-    
-            });
-        })(jQuery);
-    </script>
+    var url = "https://api.nasa.gov/planetary/apod?api_key=baEhg5J1kxWI2vTn9NhQf8V4f8o8y0MQVRgXFAeE"
+    $.ajax({
+            url,
+            type: "GET",
+            success: function (data) {
+                console.log(data);
+                document.getElementById("nasa").insertAdjacentHTML("afterbegin"," <img style='width: 95vw;' src='"+ data.url +"'/> <p style='overflow: scroll;max-height: 71vw;'>"+ data.explanation +"</p>")
+            },
+            error: function (data) {
+                console.warn(data);
+            },
+        });
+</script>
 </html>
