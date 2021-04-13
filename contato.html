@@ -56,17 +56,29 @@
         </nav>
     </section>
     <section id="meio-page">
-        <div class="card mb-3" style="background-color: #c7c7c7;">
-            <div style="overflow: hidden; height: 25vw;">
-                <img src="projeto.png" class="card-img-top" alt="...">
+        <div class="position-relative">
+            <div class="position-absolute top-0 start-50 translate-middle">
+                <h1 style="text-align: center; margin-bottom: 2vw;">Entre em contato!</h1>
+                <form>
+                    <div class="mb-3">
+                        <label for="exampleInputEmail1" class="form-label">E-mail</label>
+                        <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+                        <div id="emailHelp" class="form-text">Nunca compartilharemos seu e-mail com mais ninguém.</div>
+                    </div>
+                    <div class="mb-3">
+                        <label for="exampleFormControlTextarea1" class="form-label">Mensagem</label>
+                        <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+                    </div>
+                    <div class="mb-3 form-check">
+                        <input type="checkbox" class="form-check-input" id="exampleCheck1">
+                        <label class="form-check-label" for="exampleCheck1">Receber e-mails com novidades</label>
+                    </div>
+                    <button type="submit" class="btn btn-primary">Enviar</button>
+                </form>
             </div>
-            <div class="card-body">
-                <h5 class="card-title">Projeto 1</h5>
-                <p class="card-text">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen
-                    book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and
-                    more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
-                <p class="card-text"><small class="text-muted">Realizado em 2020</small></p>
-            </div>
+        </div>
+        <div id="formulario">
+
         </div>
     </section>
 
@@ -99,12 +111,21 @@
         font-size: 1vw;
     }
     
+    .card-body {
+        margin-top: 5vw;
+    }
+    
     h5.card-title {
         font-size: 3vw;
     }
     
     p.card-text {
         font-size: 2vw;
+    }
+    
+    .position-absolute.top-0.start-50.translate-middle {
+        margin-top: 12vw;
+        width: 32vw;
     }
     
     @media only screen and (max-width: 1000px) {
@@ -153,6 +174,23 @@
         }
         span.navbar-toggler-icon {
             font-size: 3vw;
+        }
+        .position-absolute.top-0.start-50.translate-middle {
+            margin-top: 56vw;
+            width: 88vw;
+            font-size: 5vw;
+        }
+        h1 {
+            font-size: 7vw;
+        }
+        button.btn.btn-primary {
+            font-size: 6vw;
+        }
+        input#exampleInputEmail1 {
+            height: 10vw;
+        }
+        textarea#exampleFormControlTextarea1 {
+            height: 30vw;
         }
     }
 </style>
