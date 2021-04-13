@@ -19,7 +19,7 @@
     <section id="topo-page">
         <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
             <div class="container-fluid">
-                <a class="navbar-brand" href="#" style="display: contents;"> <span class="material-icons" style="font-size: 2vw;"> fingerprint </span>
+                <a class="navbar-brand" href="index.html" style="display: contents;"> <span class="material-icons" style="font-size: 2vw;"> fingerprint </span>
                     <p style="margin-top: 14px; margin-left: 5px;">Olsen Desenvolvimentos</p>
                 </a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDarkDropdown" aria-controls="navbarNavDarkDropdown" aria-expanded="false" aria-label="Toggle navigation">
@@ -56,43 +56,17 @@
         </nav>
     </section>
     <section id="meio-page">
-        <div id="carouselExampleCaptions" class="carousel slide" data-bs-ride="carousel" style="height: 45vw;">
-            <div class="carousel-indicators">
-                <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
-                <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1" aria-label="Slide 2"></button>
-                <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="2" aria-label="Slide 3"></button>
+        <div class="card mb-3">
+            <div style="overflow: hidden; height: 25vw;">
+                <img src="projeto.png" class="card-img-top" alt="...">
             </div>
-            <div class="carousel-inner" style="    height: 50vw;">
-                <div class="carousel-item active" style="    height: 27vw;">
-                    <img src="1.jpg" class="d-block w-100" alt="...">
-                    <div class="carousel-caption d-none d-md-block">
-                        <h5 class="titulo">Desenvolvimento</h5>
-                        <p class="sub-titulo">Sempre utilizando o mais alto nivel de tecnologia disponivel.</p>
-                    </div>
-                </div>
-                <div class="carousel-item" style="    height: 27vw;">
-                    <img src="2.jpg" class="d-block w-100" alt="...">
-                    <div class="carousel-caption d-none d-md-block">
-                        <h5 class="titulo">Acessibilidade</h5>
-                        <p class="sub-titulo"> Buscando sempre tornar o trabalho do cliente mais facil.</p>
-                    </div>
-                </div>
-                <div class="carousel-item" style="    height: 27vw;">
-                    <img src="3.jpg" class="d-block w-100" alt="...">
-                    <div class="carousel-caption d-none d-md-block">
-                        <h5 class="titulo">Paixão</h5>
-                        <p class="sub-titulo">Programadores que amam o que fazem.</p>
-                    </div>
-                </div>
+            <div class="card-body">
+                <h5 class="card-title">Projeto 2</h5>
+                <p class="card-text">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen
+                    book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and
+                    more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
+                <p class="card-text"><small class="text-muted">Realizado em 2020</small></p>
             </div>
-            <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="prev">
-              <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-              <span class="visually-hidden">Previous</span>
-            </button>
-            <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="next">
-              <span class="carousel-control-next-icon" aria-hidden="true"></span>
-              <span class="visually-hidden">Next</span>
-            </button>
         </div>
     </section>
 
@@ -121,6 +95,14 @@
         font-size: 1vw;
     }
     
+    h5.card-title {
+        font-size: 3vw;
+    }
+    
+    p.card-text {
+        font-size: 2vw;
+    }
+    
     @media only screen and (max-width: 1000px) {
         #div_frase {
             display: none !important;
@@ -146,6 +128,12 @@
         }
         .carousel-caption.d-none.d-md-block {
             top: 50vw;
+        }
+        h5.card-title {
+            font-size: 6vw;
+        }
+        p.card-text {
+            font-size: 3vw;
         }
     }
 </style>
